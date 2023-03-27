@@ -33,7 +33,6 @@ const checkoutReducer = (state, action) => {
 
     switch (type) {
         case "UPDATE_SUMMARY":
-            // console.log('UPDATE_SUMMARY', payload)
             return {
                 ...state,
                 summaryDetails: {
@@ -42,7 +41,6 @@ const checkoutReducer = (state, action) => {
                 }
             }
         case "UPDATE_TOTAL_PAYMENT":
-            console.log('UPDATE_TOTAL_PAYMENT', payload)
             return {
                 ...state,
                 tempArr: payload.arr,
@@ -52,7 +50,6 @@ const checkoutReducer = (state, action) => {
                 }
             }
         case "UPDATE_DELIVERY":
-            console.log('UPDATE_DELIVERY', payload)
             return {
                 ...state,
                 deliveryDetails: {
@@ -61,7 +58,6 @@ const checkoutReducer = (state, action) => {
                 }
             }
         case "NEXT_STEP":
-            console.log('NESXT_STEP', payload)
             return {
                 ...state,
                 step: payload.step

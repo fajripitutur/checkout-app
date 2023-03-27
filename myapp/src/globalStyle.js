@@ -193,8 +193,7 @@ const GlobalStyle = createGlobalStyle`
     color: white;
   }
   .step.inactive {
-    // background-color: rgba(255, 138, 0, 1);
-    // opacity: 20%;
+    background-color: #facd98;
     color: #FF8A00;
   }
   
