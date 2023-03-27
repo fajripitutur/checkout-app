@@ -1,24 +1,55 @@
+import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import { Link, Navigate, Route, Routes, BrowserRouter as Router } from 'react-router-dom'
+
+import Delivery from './pages/delivery';
+import Finish from './pages/finish';
+import Payment from './pages/payment';
+
+import { CheckoutProvider } from './context/checkoutContext';
+
+
+export const routes = [
+  {
+    name: 'Delivery',
+    key: 1,
+    path: '/delivery',
+    component: <Delivery />
+  },
+  {
+    name: 'Payment',
+    key: 2,
+    path: '/payment',
+    component: <Payment />
+  },
+  {
+    name: 'finish',
+    key: 3,
+    path: '/finish',
+    component: <Finish />
+  },
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <CheckoutProvider>
+        <Router>
+          <Routes>
+
+            {routes.map((route) => (
+              <Route
+                key={route.key}
+                path={route.path}
+                element={route.component}
+              />
+            ))}
+
+          </Routes>
+        </Router>
+      </CheckoutProvider>
+    </React.Fragment>
   );
 }
 
