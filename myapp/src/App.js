@@ -6,6 +6,7 @@ import { Link, Navigate, Route, Routes, BrowserRouter as Router } from 'react-ro
 import Delivery from './pages/delivery';
 import Finish from './pages/finish';
 import Payment from './pages/payment';
+import Page404 from './pages/404'
 
 import { CheckoutProvider } from './context/checkoutContext';
 
@@ -29,6 +30,12 @@ export const routes = [
     path: '/finish',
     component: <Finish />
   },
+  // {
+  //   name: '404',
+  //   key: 3,
+  //   path: '*',
+  //   component: <Page404 />
+  // },
 ]
 
 function App() {
@@ -45,6 +52,7 @@ function App() {
                 element={route.component}
               />
             ))}
+            <Route path="*" element={<Page404 />} />
 
           </Routes>
         </Router>
