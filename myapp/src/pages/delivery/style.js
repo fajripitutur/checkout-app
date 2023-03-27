@@ -121,7 +121,7 @@ const StyleWrapper = styled.div`
   }
   
   .input-field.success {
-    border: 1px solid #1BD97; /* border color for success */
+    border: 1px solid #1BD97B; /* border color for success */
   }
 
 `;

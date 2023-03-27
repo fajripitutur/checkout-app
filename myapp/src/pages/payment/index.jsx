@@ -27,7 +27,7 @@ export default function () {
 
     updateTotalPayment({
       type: 'deliveryFee',
-      fee: data.price
+      fee: data.price ? data.price : summaryDetails.deliveryFee
     })
 
     updateSummary({
